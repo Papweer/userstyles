@@ -13,22 +13,19 @@
 	<a href="https://raw.githubusercontent.com/catppuccin/userstyles/main/styles/tldraw/catppuccin.user.less"><img src="https://img.shields.io/badge/stylus-install-cba6f7?colorA=363a4f&style=for-the-badge"></a>
 </p>
 
-<p align="center">
-  <img src="preview.webp"/>
-</p>
-
 ## Usage
 
-See [the userstyle usage instructions](../../docs/USAGE.md).
+See [the userstyle usage instructions](https://userstyles.catppuccin.com/getting-started/usage/).
 
 > [!NOTE]
 > This theme only changes how the colors appear on the tldraw canvas. Exported graphics **will not be Catppuccin-themed**.
 
+## 💝 Current Maintainer
+- [NekoDrone](https://github.com/NekoDrone)
 
-## 💝 Current Maintainers
+## 💖 Past Maintainers
 - [GenShibe](https://github.com/GenShibe)
 - [uncenter](https://github.com/uncenter)
-
 
 &nbsp;
 

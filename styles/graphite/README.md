@@ -4,7 +4,7 @@
 <h3 align="center">
 	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/logos/exports/1544x1544_circle.png" width="100" alt="Logo"/><br/>
 	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/misc/transparent.png" height="30" width="0px"/>
-  Catppuccin for <a href="https://app.graphite.dev">Graphite</a>
+  Catppuccin for <a href="https://app.graphite.com">Graphite</a>
 	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/misc/transparent.png" height="30" width="0px"/>
 </h3>
 
@@ -13,19 +13,16 @@
 	<a href="https://raw.githubusercontent.com/catppuccin/userstyles/main/styles/graphite/catppuccin.user.less"><img src="https://img.shields.io/badge/stylus-install-cba6f7?colorA=363a4f&style=for-the-badge"></a>
 </p>
 
-<p align="center">
-  <img src="preview.webp"/>
-</p>
-
 ## Usage
 
-See [the userstyle usage instructions](../../docs/USAGE.md).
+See [the userstyle usage instructions](https://userstyles.catppuccin.com/getting-started/usage/).
 
 
+## ❤️‍🩹 Unmaintained
+This userstyle currently lacks maintainers, and may not work correctly. Please feel free to contribute for any issues you find!
 
-## 💝 Current Maintainer
+## 💖 Past Maintainer
 - [isabelroses](https://github.com/isabelroses)
-
 
 &nbsp;
 
