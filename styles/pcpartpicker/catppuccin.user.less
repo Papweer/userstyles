@@ -34,6 +34,7 @@
     background-color: @base;
     body, .wrapper__pageContent {
       color: @text;
+      background-color: @base;
     }
     svg.icon, svg.nav__icon {
       fill: @subtext0 !important;
@@ -44,6 +45,11 @@
       &:hover {
         color: lighten(@accent, 5%);
       }
+    }
+      
+    .list-unstyled li {
+      color: @text;
+      border-color: @surface0;
     }
 
     @logo: escape(
@@ -59,21 +65,14 @@
     // === Tables === //
     table, .table {
       td, h6 {
-        color: @text !important;
+        color: @text;
       }
       tr, .tr, .td__component {
-        border-color: @surface0 !important;
-        .topicTitle--staff::before {
-          background-color: @red !important;
-        }
-        a, p {
-          // With smaller screen widths a background is applied for some reason this removes it
-          background-color: transparent !important;
-        }
+        border-color: @surface1;
       }
       th, .th {
-        color: @text !important;
-        border-color: @surface1 !important;
+        color: @text;
+        border-color: @surface2;
       }
       .td__name a, .td__nameWrapper a, .row--forumTitle a {
         color: @text !important;
@@ -92,14 +91,11 @@
           color: lighten(@accent, 5%) !important;
         }
       }
-      .td--empty::after {
-        background-color: @surface0 !important;
+      .td__price--out-of-stock {
+        color: @overlay0 !important;
       }
-      .th--sorted {
-        border-color: @accent !important;
-        .sortArrow svg {
-          fill: @accent !important;
-        }
+      .td--empty::after {
+        background-color: @surface0;
       }
       .th--sortable {
         .sortArrow svg {
@@ -110,6 +106,12 @@
           .sortArrow svg {
             fill: @accent !important;
           }
+        }
+      }
+      .th--sorted {
+        border-color: @accent !important;
+        .sortArrow svg {
+          fill: @accent !important;
         }
       }
       .td__promoNote span {
@@ -138,10 +140,7 @@
     .modal__container {
       background-color: @surface0;
       box-shadow: none;
-
-      p, label, h2, div {
-        color: @text;
-      }
+      
       .modal__close {
         &:hover svg {
           fill: @red !important;
@@ -198,7 +197,7 @@
       h4 {
         color: @subtext0;
       }
-      #tabs {
+      #tabs a {
         &:not(.active) {
           color: @subtext0;
           &:hover {
@@ -234,6 +233,10 @@
       .nav__top, .navLogoOnly {
         background-color: @crust;
       }
+        
+      .nav__account .modeSwitch__label {
+        color: @text;
+      }
 
       .navDesktop {
         background-color: @crust;
@@ -256,21 +259,20 @@
       }
       .nav__bottom {
         background-color: @crust;
-        border-color: @base !important;
+        border-color: @base;
 
         .nav__categories > li > a {
           color: @subtext0 !important;
-          border-color: @base !important;
+          border-color: @base;
 
           &:hover {
-            background-color: @mantle !important;
-            color: @text !important;
+            background-color: @mantle;
             svg {
-              fill: @accent !important;
+              fill: @accent;
             }
           }
           &.nav__categories--active {
-            background-color: @mantle !important;
+            background-color: @mantle;
             color: @accent !important;
             svg {
               fill: @accent !important;
@@ -287,9 +289,6 @@
         }
       }
 
-      select {
-        background-color: transparent !important;
-      }
       .modeSwitch .pp_toggle_theme {
         background-color: @base !important;
         box-shadow: inset 0 0 0 1px @surface0 !important;
@@ -306,14 +305,14 @@
       }
 
       .browseProducts {
-        background-color: @mantle !important;
+        background-color: @mantle;
         h2 {
           color: @text !important;
         }
         a {
           color: @subtext0 !important;
           &:hover {
-            color: lighten(@accent, 5%) !important;
+            color: @accent;
           }
         }
         .browseProducts__block--group1 .list-unstyled {
@@ -922,54 +921,57 @@
 
     // Buttons (all types)
     .button {
-      background-color: @accent !important;
-      border-color: @accent !important;
-      color: @base !important;
+      background-color: @accent;
+      border-color: @accent;
+      color: @base;
       svg {
         fill: @base !important;
       }
       &.button--negative {
-        background-color: @red !important;
-        border-color: @red !important;
+        background-color: @red;
+        border-color: @red;
       }
       &.button--success {
-        background-color: @green !important;
-        border-color: @green !important;
+        background-color: @green;
+        border-color: @green;
       }
       &.button--dark {
-        background-color: @base !important;
-        border-color: @base !important;
-        color: @text !important;
+        background-color: @base;
+        border-color: @base;
+        color: @text;
+        svg {
+          fill: @text !important;
+        }
       }
 
       &:not(.button--disabled):not(:disabled):hover {
-        background-color: lighten(@accent, 5%) !important;
-        border-color: lighten(@accent, 5%) !important;
+        background-color: lighten(@accent, 5%);
+        border-color: lighten(@accent, 5%);
         color: @base !important;
         &.button--negative {
-          background-color: lighten(@red, 5%) !important;
-          border-color: lighten(@red, 5%) !important;
+          background-color: lighten(@red, 5%);
+          border-color: lighten(@red, 5%);
         }
         &.button--success {
-          background-color: lighten(@green, 5%) !important;
-          border-color: lighten(@green, 5%) !important;
+          background-color: lighten(@green, 5%);
+          border-color: lighten(@green, 5%);
         }
         &.button--dark {
-          background-color: @mantle !important;
-          border-color: @mantle !important;
-          color: @text !important;
+          background-color: @mantle;
+          border-color: @mantle;
+          color: @text;
         }
       }
     }
 
     // Radio
     .radio + label::before {
-      border-color: @surface0 !important;
-      background-color: @crust !important;
+      border-color: @surface0;
+      background-color: @crust;
     }
     .radio:checked + label::before {
-      border-color: @accent !important;
-      background-color: @base !important;
+      border-color: @accent;
+      background-color: @base;
     }
 
     // Checkbox
@@ -1095,7 +1097,7 @@
     }
 
     // Box showing saved part lists. Used in user profile
-    .partlist__saved {
+    .partlist__saved, .userbuild__partlist, #partlist_select_current a {
       background-color: @mantle;
       border-color: @mantle;
     }
@@ -1105,9 +1107,13 @@
       background-color: @base !important;
       border-color: @surface0 !important;
     }
-    .build-carousel-edit-images {
+    #gallery_box {
       background-color: @base !important;
       border-color: @base !important;
+    }
+    .image-list li {
+      background-color: @crust !important;
+      border-color: @surface0 !important;
     }
 
     // Dragable Lists
@@ -1171,6 +1177,11 @@
         background-color: @accent;
       }
     }
+      
+    // Forums Staff Dot
+    .topicTitle--staff::before {
+      background-color: @red !important;
+    }
 
     // Toasts
     .pageMessage p {
@@ -1185,7 +1196,8 @@
       background-color: @accent !important;
       color: @base;
     }
-
+    
+    // Mainly used in forums
     .subTitle {
       border-color: @surface1;
     }
@@ -1194,11 +1206,6 @@
     }
     .group__title {
       color: @text !important;
-    }
-
-    .list-unstyled li {
-      color: @text;
-      border-color: @surface0;
     }
 
     .offCanvas {
