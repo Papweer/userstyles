@@ -30,6 +30,12 @@
   #catppuccin(@flavor) {
     #lib.palette();
     #lib.defaults();
+      
+    .set-colors(@bg, @border, @text) {
+      background-color: @bg;
+      border-color: @border;
+      color: @text;
+    }
 
     background-color: @base;
     body, .wrapper__pageContent {
@@ -61,10 +67,136 @@
     @logoText: escape(
       '<svg xmlns="http://www.w3.org/2000/svg" width="127" height="19" viewBox="0 0 127 19" fill="none"><path fill="@{text}" d="M9.167 5.832c0 1.906-.361 3.308-1.084 4.177-.722.898-1.916 1.318-3.555 1.318H2.833v7.122H0V.28h4.528c1.639 0 2.805.449 3.555 1.346q1.084 1.346 1.084 4.206m-2.834 0c0-.925-.139-1.654-.389-2.16-.25-.532-.75-.784-1.527-.784H2.833v5.86h1.584c.75 0 1.277-.253 1.527-.785.25-.505.39-1.234.39-2.131m14.222 7.794a7.1 7.1 0 0 1-.417 2.243c-.25.673-.611 1.234-1.056 1.654a4.4 4.4 0 0 1-1.333.87c-.5.196-1.083.28-1.778.28-.833 0-1.555-.14-2.11-.449-.556-.308-1.029-.673-1.39-1.121a4.8 4.8 0 0 1-.722-1.206 7.5 7.5 0 0 1-.389-1.598 22 22 0 0 1-.167-2.13c-.027-.814-.027-1.74-.027-2.833s0-2.018.027-2.831c.028-.813.084-1.514.167-2.131s.222-1.15.39-1.598c.166-.449.416-.841.721-1.206.361-.449.834-.813 1.39-1.121S15.111 0 15.971 0a5.8 5.8 0 0 1 1.806.28c.5.197.972.477 1.361.87.444.42.806.953 1.028 1.626.222.645.36 1.402.416 2.215h-2.86a11 11 0 0 0-.112-.982 2.2 2.2 0 0 0-.305-.785 1.45 1.45 0 0 0-.528-.476c-.222-.112-.472-.169-.833-.169-.334 0-.612.057-.834.197s-.389.28-.528.504c-.277.449-.472 1.15-.527 2.103a67 67 0 0 0-.111 3.925c0 1.683.027 2.972.11 3.926.056.953.25 1.654.528 2.102.14.197.306.365.528.505s.472.196.833.196q.501 0 .834-.168a1.45 1.45 0 0 0 .528-.476 2.6 2.6 0 0 0 .305-.814c.056-.308.084-.616.111-.98h2.834z"/><path fill="@{accent}" d="M32.111 5.832c0 1.906-.361 3.308-1.083 4.177-.722.898-1.917 1.318-3.556 1.318h-1.694v7.122h-2.833V.28h4.527c1.64 0 2.806.449 3.556 1.346q1.083 1.346 1.083 4.206m-2.833 0c0-.925-.14-1.654-.39-2.16-.25-.532-.75-.784-1.527-.784h-1.583v5.86h1.583c.75 0 1.278-.253 1.528-.785.25-.505.389-1.234.389-2.131M40.5 18.477l-.722-3.617H35.61l-.722 3.617h-3L36.333.28h2.75l4.39 18.197zM37.694 4.682l-1.555 7.626h3.083zm14.223 13.795-2.361-7.458h-1.584v7.458H45.14V.28h4.555c1.667 0 2.834.421 3.556 1.262s1.056 2.215 1.056 4.094c0 1.121-.14 2.074-.417 2.887-.278.813-.833 1.43-1.667 1.879l2.695 8.075zm-.445-12.841c0-.365-.028-.73-.055-1.066-.056-.336-.111-.645-.25-.897a1.35 1.35 0 0 0-.528-.589 1.8 1.8 0 0 0-.917-.224h-1.75v5.58h1.75c.361 0 .667-.085.917-.225.222-.14.417-.336.528-.589.11-.252.194-.56.25-.897.027-.364.055-.7.055-1.093m9.861-2.776v15.617H58.5V2.86h-3V.28h8.889v2.58z"/><path fill="@{text}" d="M75.611 5.832c0 1.906-.361 3.308-1.083 4.177-.722.898-1.917 1.318-3.556 1.318h-1.694v7.122h-2.834V.28h4.528c1.64 0 2.806.449 3.556 1.346.694.897 1.083 2.3 1.083 4.206m-2.861 0c0-.925-.139-1.654-.389-2.16-.25-.532-.75-.784-1.528-.784H69.25v5.86h1.583c.75 0 1.278-.253 1.528-.785.278-.505.389-1.234.389-2.131m5.306 12.645V.28h2.833v18.197zm14.805-4.851a7.2 7.2 0 0 1-.417 2.243c-.25.673-.61 1.234-1.055 1.654a4.4 4.4 0 0 1-1.334.87c-.5.196-1.083.28-1.777.28-.834 0-1.556-.14-2.111-.449-.556-.308-1.028-.673-1.39-1.121a4.8 4.8 0 0 1-.722-1.206 7.5 7.5 0 0 1-.388-1.598 22 22 0 0 1-.167-2.13c-.028-.814-.028-1.74-.028-2.833s0-2.018.028-2.831.083-1.514.167-2.131c.083-.617.222-1.15.388-1.598.167-.449.417-.841.723-1.206.36-.449.833-.813 1.389-1.121C86.722.14 87.417 0 88.277 0a5.8 5.8 0 0 1 1.806.28c.5.197.972.477 1.361.87.445.42.806.953 1.028 1.626.222.645.361 1.402.417 2.215h-2.834a11 11 0 0 0-.11-.982 2.2 2.2 0 0 0-.306-.785 1.45 1.45 0 0 0-.528-.476c-.222-.112-.472-.169-.833-.169-.334 0-.611.057-.834.197s-.389.28-.527.504c-.278.449-.473 1.15-.528 2.103a67 67 0 0 0-.111 3.925c0 1.683.027 2.972.11 3.926.056.953.25 1.654.529 2.102.138.197.305.365.527.505s.473.196.834.196q.499 0 .833-.168a1.45 1.45 0 0 0 .528-.476 2.6 2.6 0 0 0 .305-.814 10 10 0 0 0 .111-.98h2.806zm9.5 4.851-2.916-7.486-1.362 2.803v4.683H95.25V.28h2.833v8.552L102 .28h2.861l-3.611 7.542 4.167 10.655zm4.75 0V.28h7.583v2.58h-4.722v5.159h4.084v2.58h-4.112v5.298h4.723v2.58zm16.806 0-2.361-7.458h-1.584v7.458h-2.833V.28h4.555c1.667 0 2.834.421 3.556 1.262s1.056 2.215 1.056 4.094c0 1.121-.139 2.074-.417 2.887s-.833 1.43-1.667 1.879l2.695 8.075zm-.445-12.841c0-.365-.028-.73-.055-1.066-.056-.336-.111-.645-.25-.897a1.35 1.35 0 0 0-.528-.589 1.8 1.8 0 0 0-.917-.224h-1.75v5.58h1.75c.361 0 .667-.085.917-.225.222-.14.417-.336.528-.589a3.8 3.8 0 0 0 .25-.897c.027-.364.055-.7.055-1.093"/></svg>';
     );
+      
+    //==Inputs==//
+    // Input
+    input:not(.button) {
+      background-color: @mantle;
+      border-color: @mantle;
+      color: @text;
+      box-shadow: none;
+    }
+    .wrapper-formField label {
+      color: @text;
+    }
+
+    // Select
+    select {
+      background-color: @mantle;
+      color: @text;
+      // Down arrow
+      @svg: escape(
+        '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 18 18" enable-background="new 0 0 18 18" xml:space="preserve"><polygon points="9,13.6 2.2,6.8 3.8,5.2 9,10.4 14.2,5.2 15.8,6.8" fill="@{text}"/></svg>'
+      );
+      background-image: url("data:image/svg+xml,@{svg}");
+      box-shadow: none;
+    }
+    textarea {
+      background-color: @mantle;
+      box-shadow: none;
+    }
+
+    // Buttons (all types)
+    .button {
+      .set-colors(@accent, @accent, @base);
+      svg {
+        fill: @base !important;
+      }
+      &.button--negative {
+        .set-colors(@red, @red, @base);
+      }
+      &.button--success {
+        .set-colors(@green, @green, @base);
+      }
+      &.button--dark {
+        .set-colors(@base, @base, @text);
+        svg {
+          fill: @text !important;
+        }
+      }
+
+      &:not(.button--disabled):not(:disabled):hover {
+        .set-colors(lighten(@accent, 5%), lighten(@accent, 5%), @base);
+        &.button--negative {
+          .set-colors(lighten(@red, 5%), lighten(@red, 5%), @base);
+        }
+        &.button--success {
+          .set-colors(lighten(@green, 5%), lighten(@green, 5%), @base);
+        }
+        &.button--dark {
+          .set-colors(@mantle, @mantle, @text);
+        }
+      }
+    }
+
+    // Radio
+    .radio + label::before {
+      border-color: @surface0;
+      background-color: @crust;
+    }
+    .radio:checked + label::before {
+      border-color: @accent;
+      background-color: @base;
+    }
+
+    // Checkbox
+    .checkbox + label::before {
+      background-color: @crust;
+      border-color: transparent;
+    }
+    .checkbox:checked + label::before {
+      background-color: @accent;
+      border-color: @accent;
+      @svg: escape(
+        '<svg viewBox="0 -0.5 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m5.5 12.5 4.667 4.5L19.5 8" stroke="@{base}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+      );
+      background-image: url("data:image/svg+xml,@{svg}") !important;
+    }
+
+    // Slider to select a range of values
+    .filter_slider--wrapper {
+      .ui-slider {
+        background-color: @surface0;
+      }
+      .ui-slider-range, .ui-slider-handle {
+        background-color: @accent;
+      }
+    }
+    // Buttons to show more/less info
+    .moreless {
+      color: @accent !important;
+      &:hover {
+        color: lighten(@accent, 5%) !important;
+      }
+      svg {
+        fill: @accent !important;
+      }
+    }
+    .collapse-toggle::after, .collapse-toggle::before {
+      background-color: @text !important;
+    }
+
+    // Switch Toggle
+    .toggle + label > .toggle__track {
+      background-color: @crust;
+      border-color: @crust;
+      &::before {
+        background-color: @subtext1;
+        border-color: @crust;
+      }
+    }
+    .toggle:checked + label > .toggle__track {
+      background-color: @accent;
+      border-color: @accent;
+      &::before {
+        background-color: @crust;
+        border-color: @accent;
+      }
+    }
 
     // === Tables === //
     table, .table {
-      td, h6 {
+      td {
         color: @text;
       }
       tr, .tr, .td__component {
@@ -73,6 +205,9 @@
       th, .th {
         color: @text;
         border-color: @surface2;
+      }
+      .specLabel {
+        color: @subtext0 !important;
       }
       .td__name a, .td__nameWrapper a, .row--forumTitle a {
         color: @text !important;
@@ -468,9 +603,7 @@
         .actionBox__options > li {
           border-color: @mantle;
           a {
-            border-color: @mantle;
-            background-color: @mantle;
-            color: @text;
+            .set-colors(@mantle, @mantle, @text);
             &:hover {
               color: @accent;
               svg {
@@ -727,29 +860,19 @@
         }
         .actionBoxGroup--productSeries {
           a {
-            background-color: @surface1;
-            border-color: @surface1;
-            color: @text;
+            .set-colors(@surface1, @surface1, @text);
             &:hover {
-              border-color: @accent;
-              background-color: @accent;
-              color: @base;
+              .set-colors(@accent, @accent, @base);
             }
           }
           .active {
-            background-color: @accent;
-            border-color: @accent;
-            color: @base;
+            .set-colors(@accent, @accent, @base);
           }
           .inactive {
-            background-color: @surface0;
-            border-color: @surface0;
-            color: @text;
+            .set-colors(@surface0, @surface0, @text);
             opacity: 1;
             &:hover {
-              border-color: @surface1;
-              background-color: @surface1;
-              color: @text;
+              .set-colors(@surface1, @surface1, @text);
             }
           }
         }
@@ -773,9 +896,7 @@
         }
       }
       .actionBox__actions a {
-        border-color: transparent;
-        background-color: @mantle;
-        color: @text;
+        .set-colors(@mantle, transparent, @text);
         &:hover {
           border-color: @accent;
           color: @accent;
@@ -890,143 +1011,6 @@
     }
     .icon.shape-star-empty {
       fill: @surface0 !important;
-    }
-
-    //==Inputs==//
-    // Input
-    input {
-      background-color: @mantle !important;
-      border-color: @mantle !important;
-      color: @text !important;
-      box-shadow: none !important;
-    }
-    .wrapper-formField label {
-      color: @text !important;
-    }
-
-    // Select
-    select {
-      background-color: @mantle;
-      color: @text !important;
-      // Down arrow
-      @svg: escape(
-        '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 18 18" enable-background="new 0 0 18 18" xml:space="preserve"><polygon points="9,13.6 2.2,6.8 3.8,5.2 9,10.4 14.2,5.2 15.8,6.8" fill="@{text}"/></svg>'
-      );
-      background-image: url("data:image/svg+xml,@{svg}") !important;
-      box-shadow: none !important;
-    }
-    textarea {
-      background-color: @mantle !important;
-    }
-
-    // Buttons (all types)
-    .button {
-      background-color: @accent;
-      border-color: @accent;
-      color: @base;
-      svg {
-        fill: @base !important;
-      }
-      &.button--negative {
-        background-color: @red;
-        border-color: @red;
-      }
-      &.button--success {
-        background-color: @green;
-        border-color: @green;
-      }
-      &.button--dark {
-        background-color: @base;
-        border-color: @base;
-        color: @text;
-        svg {
-          fill: @text !important;
-        }
-      }
-
-      &:not(.button--disabled):not(:disabled):hover {
-        background-color: lighten(@accent, 5%);
-        border-color: lighten(@accent, 5%);
-        color: @base !important;
-        &.button--negative {
-          background-color: lighten(@red, 5%);
-          border-color: lighten(@red, 5%);
-        }
-        &.button--success {
-          background-color: lighten(@green, 5%);
-          border-color: lighten(@green, 5%);
-        }
-        &.button--dark {
-          background-color: @mantle;
-          border-color: @mantle;
-          color: @text;
-        }
-      }
-    }
-
-    // Radio
-    .radio + label::before {
-      border-color: @surface0;
-      background-color: @crust;
-    }
-    .radio:checked + label::before {
-      border-color: @accent;
-      background-color: @base;
-    }
-
-    // Checkbox
-    .checkbox + label::before {
-      background-color: @crust;
-      border-color: transparent;
-    }
-    .checkbox:checked + label::before {
-      background-color: @accent;
-      border-color: @accent;
-      @svg: escape(
-        '<svg viewBox="0 -0.5 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m5.5 12.5 4.667 4.5L19.5 8" stroke="@{base}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>'
-      );
-      background-image: url("data:image/svg+xml,@{svg}") !important;
-    }
-
-    // Slider to select a range of values
-    .filter_slider--wrapper {
-      .ui-slider {
-        background-color: @surface0;
-      }
-      .ui-slider-range, .ui-slider-handle {
-        background-color: @accent;
-      }
-    }
-    // Buttons to show more/less info
-    .moreless {
-      color: @accent !important;
-      &:hover {
-        color: lighten(@accent, 5%) !important;
-      }
-      svg {
-        fill: @accent !important;
-      }
-    }
-    .collapse-toggle::after, .collapse-toggle::before {
-      background-color: @text !important;
-    }
-
-    // Switch Toggle
-    .toggle + label > .toggle__track {
-      background-color: @crust;
-      border-color: @crust;
-      &::before {
-        background-color: @subtext1;
-        border-color: @crust;
-      }
-    }
-    .toggle:checked + label > .toggle__track {
-      background-color: @accent;
-      border-color: @accent;
-      &::before {
-        background-color: @crust;
-        border-color: @accent;
-      }
     }
 
     //==Random Small Elements==//
